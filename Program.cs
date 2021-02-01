@@ -59,8 +59,8 @@ namespace Homework_Theme_01
 
             // Форматированный вывод
             Console.WriteLine(Tom.pattern, Tom.Name, Tom.Age, Tom.Height, Tom.gpa.ToString("#.##"));
-            Console.ReadKey(); Console.Clear();
-            Console.WriteLine();
+            Console.ReadKey(); 
+            
         }
     }
 }
