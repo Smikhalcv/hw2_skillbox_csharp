@@ -44,8 +44,10 @@ namespace Homework_Theme_01
                 int width = Console.WindowWidth;
                 if (text.Length < width)
                 {
-                    text = text.PadLeft((width - text.Length) / 2 + text.Length, ' ');  
+                    Console.CursorLeft = (width - text.Length) / 2;
+                    //text = text.PadLeft((width - text.Length) / 2 + text.Length, ' ');
                 }
+                
                 Console.WriteLine(text);
             };
 
