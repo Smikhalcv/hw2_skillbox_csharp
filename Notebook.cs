@@ -2,17 +2,17 @@
 
 namespace Homework_Theme_01
 {
-	/// <summary>
+    /// <summary>
     /// Класс описывающий записную книжку
     /// </summary>
-	class Notebook
-	{	
-		/// <summary>
+    class Notebook
+    {
+        /// <summary>
         /// Имя контакта в записной книжке
         /// </summary>
-		public string Name { get; set; }
+        public string Name { get; set; }
 
-		/// <summary>
+        /// <summary>
         /// Возраст контакта в записной книжке
         /// </summary>
         public int Age { get; set; }
@@ -25,25 +25,19 @@ namespace Homework_Theme_01
         /// <summary>
         /// Оценка по истории
         /// </summary>
-        public  int perfomanceHistory { get; set; }
+        int PerfomanceHistory { get; set; }
 
         /// <summary>
         /// Оценка по математике
         /// </summary>
-        
-        public int perfomanceMath { get; set; }
+
+        int PerfomanceMath { get; set; }
 
         /// <summary>
         /// Оценка по русскому языку
         /// </summary>
-         
-        public int perfomanceRus { get; set; }
 
-        /// <summary>
-        /// Срдний балл
-        /// </summary>
-
-        public double gpa;
+        int PerfomanceRus { get; set; }
 
         /// <summary>
         /// Конструктор класса
@@ -53,10 +47,21 @@ namespace Homework_Theme_01
             this.Name = Name;
             this.Age = Age;
             this.Height = Height;
-            this.perfomanceHistory = perfomanceHistory;
-            this.perfomanceMath = perfomanceMath;
-            this.perfomanceRus = perfomanceRus;
-            this.gpa = (this.perfomanceHistory + this.perfomanceMath + this.perfomanceRus) / 3d;
+            this.PerfomanceHistory = perfomanceHistory;
+            this.PerfomanceMath = perfomanceMath;
+            this.PerfomanceRus = perfomanceRus;
+        }
+
+        /// <summary>
+        /// Высчитывает средний балл на основании данных введённых при создании экземпляра
+        /// </summary>
+        /// <returns>Возвращает строкое представление среднего балла</returns>
+        public string GPA()
+        {
+            double Gpa;
+            Gpa = (this.PerfomanceHistory + this.PerfomanceMath + this.PerfomanceRus) / 3d;
+            return 
+                Gpa.ToString("#.##");
         }
 
         public string pattern = "Имя {0}; Возраст {1}; Рост {2}; Средний балл по трём предметам {3};";
@@ -68,7 +73,7 @@ namespace Homework_Theme_01
         public override string ToString()
         {
             return
-                "Имя " + Name + "; " + "Возраст " + Age + "; " + "Рост " + Height + "; " + "Средний балл по трём предметам " + gpa.ToString("#.##");
+                "Имя " + Name + "; " + "Возраст " + Age + "; " + "Рост " + Height + "; " + "Средний балл по трём предметам " + this.GPA();
         }
 
 

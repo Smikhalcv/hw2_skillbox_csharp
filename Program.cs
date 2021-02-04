@@ -39,30 +39,32 @@ namespace Homework_Theme_01
             /// <summary>
             /// Выводит текст посреди окна консоли
             /// <summary>
+            /// <return>Принимает на вход строковую переменную, которую выводит по центру окна консоли</return>
             void WriteLineCentered(string text)
             {
                 int width = Console.WindowWidth;
                 if (text.Length < width)
                 {
                     Console.CursorLeft = (width - text.Length) / 2;
-                    //text = text.PadLeft((width - text.Length) / 2 + text.Length, ' ');
                 }
                 
                 Console.WriteLine(text);
             };
 
             Notebook Tom = new Notebook("Tom", 29, 172, 6, 9, 1);
-            
+
+            //Console.WriteLine(Tom.GPA());
+
             // Вывод конкотенации из переопределения в классе записной книги
             WriteLineCentered(Tom + "");
 
             // Вывод интерполяцией
-            WriteLineCentered($"Имя {Tom.Name,15}; Возраст {Tom.Age,5}; Рост {Tom.Height,5}; Средний балл по трём предметам {Tom.gpa.ToString("#.##"),5}");
+            WriteLineCentered($"Имя {Tom.Name,15}; Возраст {Tom.Age,5}; Рост {Tom.Height,5}; Средний балл по трём предметам {Tom.GPA(),5}");
 
             // Форматированный вывод
-            Console.WriteLine(Tom.pattern, Tom.Name, Tom.Age, Tom.Height, Tom.gpa.ToString("#.##"));
-            Console.ReadKey(); 
-            
+            Console.WriteLine(Tom.pattern, Tom.Name, Tom.Age, Tom.Height, Tom.GPA());
+            Console.ReadKey();
+
         }
     }
 }
